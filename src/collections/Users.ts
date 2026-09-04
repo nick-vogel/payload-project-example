@@ -7,7 +7,12 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    { name: 'active', type: 'checkbox', defaultValue: true },
+    {
+      name: 'posts',
+      type: 'join',
+      collection: 'posts',
+      on: 'author',
+    },
   ],
 }
